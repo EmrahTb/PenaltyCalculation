@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EmrahTb\\Desktop\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation.csproj": {}
+    "C:\\Users\\EmrahTb\\Desktop\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EmrahTb\\Desktop\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation.csproj": {
+    "C:\\Users\\EmrahTb\\Desktop\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EmrahTb\\Desktop\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation.csproj",
+        "projectUniqueName": "C:\\Users\\EmrahTb\\Desktop\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation.csproj",
         "projectName": "PenaltyCalculation",
-        "projectPath": "C:\\Users\\EmrahTb\\Desktop\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation.csproj",
+        "projectPath": "C:\\Users\\EmrahTb\\Desktop\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation.csproj",
         "packagesPath": "C:\\Users\\EmrahTb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EmrahTb\\Desktop\\PenaltyCalculation\\PenaltyCalculation\\obj\\",
+        "outputPath": "C:\\Users\\EmrahTb\\Desktop\\PenaltyCalculation\\PenaltyCalculation\\PenaltyCalculation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

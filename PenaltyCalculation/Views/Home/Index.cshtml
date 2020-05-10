@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Penalty Calculation";
+}
+
+
+<form action="javascript:calculate(this)" class="form-signin" style="padding-top:10px;">
+    <img class="mb-4" src="https://img.icons8.com/plasticine/2x/books.png" alt="" width="72" height="72">
+
+
+    <h1 class="h3 mb-3 font-weight-normal">Penalty Calculation</h1>
+    @Html.DropDownList("ddlCountry", (IEnumerable<SelectListItem>)ViewBag.Countrys, "Select Country", new { @class = "form-control", required = (string)null, style = "height:45px;" })
+
+
+    <br />
+    <input type="datetime" id="deliveryDate" autocomplete="off" class="form-control datepicker" placeholder="Delivery Date" required>
+    <br />
+    <input type="datetime" id="dateOfReceipt" autocomplete="off" class="form-control datepicker" placeholder="Date Of Receipt" required>
+    <br />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Calculate</button>
+    <div id="business" style="font-weight:bold;display:none;"><br />CALCULATED BUSINESS DAYS: <b id="businessDay"></b> DAY</div>
+    <div id="penalty" style="display:none">
+        <br />
+        <div style="font-weight:bold;">CALCULATED PENALTY : <br /> <b id="penaltyDay"></b> DAY * <b id="penaltyPrice"></b> <b class="currency"></b> = <b id="penaltyTotal"></b> <b class="currency"></b></div>
+    </div>
+
+</form>
+
+@section masterjs
+{
+    <script type="text/javascript">
+        function calculate() {
+            var countryId = $("#ddlCountry").val();
+            var deliveryDate = $("#deliveryDate").val();
+            var dateOfReceipt = $("#dateOfReceipt").val();
+            $.ajax({
+                url: '/Home/Calculete',
+                type: 'POST',
+                dataType: 'json',
+                data: { countryId: countryId, deliveryDate: deliveryDate, dateOfReceipt: dateOfReceipt },
+                success: function (data) {
+                    document.getElementById("business").style.display = "block";
+                    $("#businessDay").html(data.calculatedBusinessDay);
+                    if (data.calculatedPenaltyDay > 0) {
+                        document.getElementById("penalty").style.display = "block";
+                        $("#penaltyDay").html(data.calculatedPenaltyDay);
+                        $("#penaltyPrice").html(data.calculatedPenaltyPriceDay);
+                        $("#penaltyTotal").html(data.calculatedPenaltyPriceTotal);
+                        $(".currency").html(data.currency);
+                    }
+                    else {
+                         document.getElementById("penalty").style.display = "none";
+                    }
+                }
+            });
+        }
+    </script>
+}
